@@ -1,0 +1,24 @@
+<h1>Form to create new playlist</h1>
+
+<form action="/playlist" method="post">
+  {{!-- either putting the input inside the label --}}
+  <label>
+    Movie Name
+    <input type="text" name="name">
+  </label>
+
+  {{!-- or set for attribute === id attribute of input --}}
+  <label for="priority">Priority Level</label>
+  <input id="priority" type="text" name="priority">
+
+  <button type="submit">Create</button>
+</form>
+
+{{!-- Render all my playlists data --}}
+<ul>
+  {{#each playlists as |playlist|}}
+  <li>
+    {{ playlist.name }} || priority: {{ playlist.priority }}
+  </li>
+  {{/each}}
+</ul>
